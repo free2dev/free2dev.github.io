@@ -29,7 +29,7 @@ function generateSidebar(dir, space = '') {
     return content;
 }
 
-const header = '* [🏠 首页](README.md)\n\n';
+const header = '* [home](README.md)\n\n';
 const sidebar = header + generateSidebar(DOCS_DIR);
 fs.writeFileSync(path.join(DOCS_DIR, '_sidebar.md'), sidebar);
 console.log('✅ Sidebar generated in /docs successfully!');
