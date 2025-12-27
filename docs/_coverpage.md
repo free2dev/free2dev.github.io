@@ -21,44 +21,49 @@
     font-size: 5rem !important;
     font-weight: 300 !important;
     text-shadow: 0 2px 15px rgba(0,0,0,0.8) !important;
-    margin-bottom: 2.5rem !important;
   }
 
-  /* 2. 引用文字改為純白（略帶透明感增加層次） */
+  /* 2. 標題：超大純白，清晰硬朗 */
+  section.cover h1 {
+    color: #ffffff !important;
+    font-size: 6rem !important; /* 再次加大 */
+    font-weight: 800 !important;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    margin: 0.5rem 0 !important;
+    letter-spacing: -1px;
+  }
+
+  /* 3. 引用文字：小白註解風（縮小、半透明、無邊框） */
   section.cover blockquote {
     border-left: none !important;
-    color: rgba(255, 255, 255, 1) !important; /* 強制純白 */
-    font-size: 1rem !important;
+    color: rgba(255, 255, 255, 0.7) !important; /* 調低透明度像註解 */
+    font-size: 1.1rem !important; /* 縮小字號 */
     font-weight: 300 !important;
-    text-shadow: 0 2px 15px rgba(0,0,0,0.8) !important;
-    margin-bottom: 2.5rem !important;
+    font-style: normal !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    margin-bottom: 3rem !important;
   }
 
-  /* 3. 按鈕文字改為純白 + 毛玻璃 */
+  /* 4. 按鈕：回歸默認經典款（無毛玻璃，透明背景，白邊框） */
   section.cover a {
-    border: 1px solid rgba(255, 255, 255, 0.8) !important; /* 白色邊框 */
-    color: #ffffff !important; /* 按鈕文字白色 */
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+    background: transparent !important; /* 完全透明 */
     transition: all 0.3s ease;
-    border-radius: 8px !important;
-    padding: 14px 40px !important;
-    font-size: 2rem !important;
+    border-radius: 2px !important; /* 回歸硬朗方框 */
+    padding: 12px 35px !important;
+    font-size: 1.1rem !important;
     text-decoration: none !important;
   }
 
-  /* 懸停時按鈕變為主題綠，文字維持白色 */
   section.cover a:hover {
-    background: #42b983 !important;
-    border-color: #42b983 !important;
-    color: #ffffff !important;
-    box-shadow: 0 0 25px rgba(66, 185, 131, 0.6);
-    backdrop-filter: none;
+    background: #ffffff !important; /* 懸停變白底黑字，經典反差 */
+    color: #000000 !important;
+    border-color: #ffffff !important;
   }
 
-  /* 移除向下箭頭 */
+  /* 5. 隱藏不必要的元素 */
   section.cover .cover-main > p:last-child {
-    display: none !important;
+    display: none !important; /* 隱藏向下箭頭 */
   }
 </style>
