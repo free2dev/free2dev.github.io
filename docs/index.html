@@ -18,13 +18,21 @@
   <div id="app">加载中...</div>
   <script>
     window.$docsify = {
-      name: 'My Blog',
-      repo: 'https://github.com/free2dev/repo',
+      name: 'free2dev',
+      repo: 'https://github/free2dev',
       homepage: 'README.md',
       loadSidebar: true,    // 开启侧边栏
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md' // 防止子目录找不到侧边栏
       },
+
+      pagination: {
+        previousText: '上一页',
+        nextText: '下一页',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      
       autoHeader: true,    // 如果你的 md 没写标题，它会自动根据文件名生成一级标题
       subMaxLevel: 3,      // 自动把 md 文件里的 ## ### 标题提取到侧边栏，无需手动写
       loadNavbar: true,     // 开启导航栏
@@ -35,5 +43,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
 </body>
 </html>
