@@ -1,0 +1,33 @@
+name: Auto Generate Sidebar
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**.md' # 只有 docs 文件夹下的 md 变动才触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: # 赋予写入权限
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Run Sidebar Script
+        run: node gen_sidebar.node.js
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "free2dev"
+          git config --global user.email "free2dev@users.noreply.github.com"
+          git add docs/_sidebar.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: auto update sidebar" && git push)
