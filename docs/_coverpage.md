@@ -2,7 +2,7 @@
 
 > **“ work for liberal knowledge ”**
 
-[start](#README)
+[start](README.md)
 
 <style>
   /* 核心背景设置 */
