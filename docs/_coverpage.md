@@ -4,6 +4,7 @@
 
 [start](README.md)
 
+<style>
   /* 背景設置 */
   section.cover {
     background: 
