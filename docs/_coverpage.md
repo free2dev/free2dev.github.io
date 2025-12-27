@@ -18,8 +18,6 @@
   .cover h1 a {
     font-size: 4.5rem !important; /* 超大字号 */
     font-weight: 800 !important;
-    letter-spacing: -1px;
-    margin-bottom: 10px;
   }
 
   /* 副标题/小字：白而小 */
