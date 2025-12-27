@@ -13,8 +13,12 @@
       name: 'My Blog',
       repo: 'https://github.com/free2dev/repo',
       loadSidebar: true,    // 开启侧边栏
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md' // 防止子目录找不到侧边栏
+      },
+      autoHeader: true,    // 如果你的 md 没写标题，它会自动根据文件名生成一级标题
+      subMaxLevel: 3,      // 自动把 md 文件里的 ## ### 标题提取到侧边栏，无需手动写
       loadNavbar: true,     // 开启导航栏
-      subMaxLevel: 2,       // 提取 Markdown 标题生成目录
       coverpage: true,      // 开启封面
       search: 'auto',       // 开启搜索
     }
