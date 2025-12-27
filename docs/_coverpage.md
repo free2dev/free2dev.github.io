@@ -16,18 +16,19 @@
 
   /* 1. 標題改為純白 + 放大 + 強陰影 */
   section.cover h1 {
-    color: #ffffff !important;
-    font-size: 5.5rem !important;
-    font-weight: 800 !important;
-    text-shadow: 0 5px 25px rgba(0,0,0,0.8) !important; /* 加深陰影 */
-    margin: 0.5rem 0 !important;
+    border-left: none !important;
+    color: rgba(255, 255, 255, 1) !important; /* 強制純白 */
+    font-size: 5rem !important;
+    font-weight: 300 !important;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.8) !important;
+    margin-bottom: 2.5rem !important;
   }
 
   /* 2. 引用文字改為純白（略帶透明感增加層次） */
   section.cover blockquote {
     border-left: none !important;
     color: rgba(255, 255, 255, 1) !important; /* 強制純白 */
-    font-size: 1.5rem !important;
+    font-size: 1rem !important;
     font-weight: 300 !important;
     text-shadow: 0 2px 15px rgba(0,0,0,0.8) !important;
     margin-bottom: 2.5rem !important;
@@ -43,7 +44,7 @@
     transition: all 0.3s ease;
     border-radius: 8px !important;
     padding: 14px 40px !important;
-    font-size: 1.2rem !important;
+    font-size: 2rem !important;
     text-decoration: none !important;
   }
 
