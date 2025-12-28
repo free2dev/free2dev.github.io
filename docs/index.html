@@ -46,29 +46,41 @@
       margin-bottom: 30px !important;
     }
 
-    /* 按钮：白底黑字 - 核心：精准定位 start 按钮 */
+    /* 3. 按钮：透明毛玻璃 + 白色文字 */
     section.cover .cover-main p a {
-      background-color: #FFFFFF !important;
-      color: #000000 !important;
-      padding: 12px 40px !important;
-      border-radius: 4px !important;
+      /* 核心：半透明背景 + 模糊滤镜 */
+      background: rgba(255, 255, 255, 0.15) !important; 
+      backdrop-filter: blur(10px) !important; 
+      -webkit-backdrop-filter: blur(10px) !important; /* 兼容 Safari */
+    
+      color: #FFFFFF !important; /* 文字改为白色 */
+      border: 1px solid rgba(255, 255, 255, 0.3) !important; /* 极细的白色边框增加质感 */
+    
+      padding: 18px 50px !important;
+      border-radius: 50px !important; /* 保持圆润胶囊型 */
+      font-size: 1.3rem !important;
       font-weight: 700 !important;
       text-decoration: none !important;
-      border: none !important;
-      transition: all 0.3s ease;
-      display: inline-block;
+      display: inline-block !important;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
     }
 
+    /* 4. 悬停效果：发光 + 提亮 */
     section.cover .cover-main p a:hover {
-      background-color: #e0e0e0 !important;
-      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.3) !important; /* 悬停时稍微加白 */
+      transform: scale(1.05) translateY(-2px) !important;
+    
+      /* 核心：外发光效果 */
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 
+                  0 0 10px rgba(255, 255, 255, 0.2) !important;
+    
+      border: 1px solid rgba(255, 255, 255, 0.6) !important; /* 边框也随之变亮 */
     }
-
-    /* 移动端适配：防止标题在手机上溢出 */
+    /* 移动端优化 */
     @media (max-width: 600px) {
-      section.cover .cover-main h1 a {
-      font-size: 3rem !important;
-      }
+      body section.cover .cover-main h1 a { font-size: 3.5rem !important; }
+      section.cover .cover-main p a { padding: 14px 35px !important; font-size: 1.1rem !important; }
     }
   </style>
 </head>
