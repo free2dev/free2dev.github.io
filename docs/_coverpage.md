@@ -14,47 +14,52 @@
     background-size: cover !important;
     }
 
-  /* 标题：大、白、粗壮，带一点外发光让它更有质感 */
   .cover h1 a {
     color: #FFFFFF !important;
-    font-size: 5rem !important; 
-    font-weight: 900 !important;
-    letter-spacing: -2px;
-    text-shadow: 0 0 20px rgba(255,255,255,0.1); /* 微弱光晕 */
+    font-size: 5.5rem !important; /* 极大字号 */
+    font-weight: 900 !important;   /* 最粗字重 */
+    letter-spacing: -3px !important; /* 紧凑间距更有视觉张力 */
+    margin: 10px 0 !important;
+    display: block;
+    text-rendering: optimizeLegibility;
   }
 
-  /* 小字：白而小，使用 0.7 透明度降低视觉压力 */
+  /* 3. 小字（副标题）：白而小 */
   .cover blockquote {
-    color: rgba(255, 255, 255, 0.7) !important;
-    font-size: 1rem !important;
-    border-left: none !important;
-    font-weight: 300;
-    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.65) !important; /* 降低亮度，拉开层级 */
+    font-size: 1.1rem !important;
+    font-weight: 300 !important;  /* 极细，与大标题形成对比 */
+    border-left: none !important; /* 移除 Docsify 默认引用线 */
+    letter-spacing: 2px !important; /* 拉开间距，增加呼吸感 */
+    margin-bottom: 2.5rem !important;
+    text-transform: uppercase;   /* 可选：全大写更具设计感 */
   }
 
-  /* 按钮：白底黑字，极简圆角 */
+/* 4. 按钮：白底黑字 */
   .cover a.nav-link {
     background-color: #FFFFFF !important;
-    color: #000000 !important;
+    color: #000000 !important;   /* 反色文字 */
     border: none !important;
-    padding: 14px 35px !important;
-    border-radius: 4px !important; /* 方中带圆的硬朗风格 */
-    font-weight: bold !important;
-    margin-top: 30px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    padding: 16px 45px !important;
+    border-radius: 4px !important; /* 极简小圆角 */
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* 微弱的白色光晕 */
   }
 
-  /* 按钮悬停：轻微缩小或改变透明度，显得高级 */
+  /* 按钮悬停动画 */
   .cover a.nav-link:hover {
-    opacity: 0.9 !important;
-    transform: scale(0.98);
-    color: #000000 !important;
+    background-color: #f0f0f0 !important;
+    transform: scale(1.05);      /* 悬停轻微放大 */
+    box-shadow: 0 6px 30px rgba(255, 255, 255, 0.2);
   }
 
-  /* 调整 GitHub 样式的第二个按钮（如果有的话） */
+/* 如果有第二个按钮（如 GitHub），设为镂空白框 */
   .cover a.nav-link:last-of-type {
     background-color: transparent !important;
     color: #FFFFFF !important;
-    border: 1px solid #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    margin-left: 15px;
   }
 </style>
