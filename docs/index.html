@@ -16,6 +16,58 @@
     .docsify-progress {
       z-index: 999;
     }
+    
+    section.cover {
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+        url('./assets/rainy-day-comfort.jpg') no-repeat center center !important;
+      background-size: cover !important;
+    }
+
+    /* 标题：free2dev - 核心：强制取消 Docsify 默认的 a 标签样式 */
+    section.cover .cover-main h1 a {
+      color: #FFFFFF !important;
+      font-size: 5.5rem !important; /* 极大 */
+      font-weight: 900 !important;
+      letter-spacing: -3px !important;
+      text-decoration: none !important;
+      border: none !important; /* 删掉 Docsify 默认下划线 */
+      display: block;
+    }
+
+    /* 副标题：blockquote */
+    section.cover .cover-main blockquote {
+      color: rgba(255, 255, 255, 0.8) !important;
+      font-size: 1.2rem !important;
+      border: none !important; /* 删掉左侧竖线 */
+      font-style: normal !important;
+      margin-bottom: 30px !important;
+    }
+
+    /* 按钮：白底黑字 - 核心：精准定位 start 按钮 */
+    section.cover .cover-main p a {
+      background-color: #FFFFFF !important;
+      color: #000000 !important;
+      padding: 12px 40px !important;
+      border-radius: 4px !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      border: none !important;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    section.cover .cover-main p a:hover {
+      background-color: #e0e0e0 !important;
+      transform: translateY(-2px);
+    }
+
+    /* 移动端适配：防止标题在手机上溢出 */
+    @media (max-width: 600px) {
+      section.cover .cover-main h1 a {
+      font-size: 3rem !important;
+      }
+    }
   </style>
 </head>
 <body>
