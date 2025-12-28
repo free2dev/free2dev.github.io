@@ -68,17 +68,20 @@
 
 /* --- 4. 按钮悬停：修改此处实现“超亮发光” --- */
     section.cover .cover-main p a:hover {
-      background: rgba(255, 255, 255, 0.25) !important; 
-      color: #FFFFFF !important; /* 文字变全白 */
+      background: #FFFFFF !important; /* 底色完全变白 */
+    
+      /* 文字变透明点：使用黑色但透明度极低，
+         这样在白底上会透出一点背景感，看起来像刻进去的 */
+      color: rgba(0, 0, 0, 0.2) !important; 
+    
       transform: scale(1.08) translateY(-3px) !important;
     
-      /* 多层白色阴影叠加，制造强发光感 */
+      /* 强烈的白色发光 */
       box-shadow: 
-        0 0 15px rgba(255, 255, 255, 0.9),  
-        0 0 30px rgba(255, 255, 255, 0.6),  
-        0 0 60px rgba(255, 255, 255, 0.3) !important; 
+        0 0 20px rgba(255, 255, 255, 0.8),  
+        0 0 40px rgba(255, 255, 255, 0.4) !important; 
     
-      border: 1px solid rgba(255, 255, 255, 1) !important; /* 边框变亮 */
+      border: 1px solid #FFFFFF !important;
     }
     /* 移动端优化 */
     @media (max-width: 600px) {
