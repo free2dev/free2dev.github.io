@@ -5,61 +5,67 @@
 [start](README.md)
 
 <style> 
+  /* 1. 背景层：增加蒙版深度，确保文字不被图片背景干扰 */
   section.cover {
     background: 
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), 
-    /* 使用相對路徑引入你倉庫裏的圖片 */
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
     url('./assets/rainy-day-comfort.jpg') !important;
     background-position: center !important;
     background-size: cover !important;
-    }
+    background-color: #000 !important; /* 图片加载前的底色 */
+  }
 
+  /* 2. 主标题：free2dev */
   .cover h1 a {
     color: #FFFFFF !important;
-    font-size: 5.5rem !important; /* 极大字号 */
-    font-weight: 900 !important;   /* 最粗字重 */
-    letter-spacing: -3px !important; /* 紧凑间距更有视觉张力 */
+    font-size: 5.5rem !important; 
+    font-weight: 900 !important;
+    letter-spacing: -3px !important;
     margin: 10px 0 !important;
-    display: block;
-    text-rendering: optimizeLegibility;
+    text-decoration: none !important; /* 去掉可能的下划线 */
   }
 
-  /* 3. 小字（副标题）：白而小 */
+  /* 3. 小字：blockquote 样式彻底重置 */
   .cover blockquote {
-    color: rgba(255, 255, 255, 0.65) !important; /* 降低亮度，拉开层级 */
+    color: rgba(255, 255, 255, 0.7) !important;
     font-size: 1.1rem !important;
-    font-weight: 300 !important;  /* 极细，与大标题形成对比 */
-    border-left: none !important; /* 移除 Docsify 默认引用线 */
-    letter-spacing: 2px !important; /* 拉开间距，增加呼吸感 */
-    margin-bottom: 2.5rem !important;
-    text-transform: uppercase;   /* 可选：全大写更具设计感 */
+    font-weight: 300 !important;
+    border-left: none !important; /* 必须删掉左侧竖线 */
+    margin: 0 !important;
+    padding: 0 !important;
+    letter-spacing: 1px !important;
+    font-style: normal !important; /* 去掉默认斜体 */
   }
 
-/* 4. 按钮：白底黑字 */
-  .cover a.nav-link {
+  /* 4. 按钮：纯白底黑字 */
+  .cover-main p a.nav-link {
     background-color: #FFFFFF !important;
-    color: #000000 !important;   /* 反色文字 */
-    border: none !important;
-    padding: 16px 45px !important;
-    border-radius: 4px !important; /* 极简小圆角 */
-    font-size: 1rem !important;
+    color: #000000 !important;
+    border: none !important; /* 强制去掉默认边框 */
+    padding: 12px 35px !important;
+    border-radius: 4px !important;
+    font-size: 1.1rem !important;
     font-weight: 700 !important;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* 微弱的白色光晕 */
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    display: inline-block; /* 确保间距生效 */
+    margin-top: 30px !important;
   }
 
-  /* 按钮悬停动画 */
-  .cover a.nav-link:hover {
-    background-color: #f0f0f0 !important;
-    transform: scale(1.05);      /* 悬停轻微放大 */
-    box-shadow: 0 6px 30px rgba(255, 255, 255, 0.2);
+  /* 按钮悬停效果 */
+  .cover-main p a.nav-link:hover {
+    background-color: #e0e0e0 !important;
+    color: #000000 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
   }
 
-/* 如果有第二个按钮（如 GitHub），设为镂空白框 */
-  .cover a.nav-link:last-of-type {
-    background-color: transparent !important;
-    color: #FFFFFF !important;
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
-    margin-left: 15px;
+  /* 针对 Docsify 渲染出的特殊处理：清除默认包裹按钮的样式 */
+  .cover-main ul {
+    display: none; /* 如果有默认导航列表则隐藏 */
+  }
+
+  @media (max-width: 600px) {
+    .cover h1 a { font-size: 3rem !important; }
   }
 </style>
