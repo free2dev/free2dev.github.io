@@ -49,12 +49,12 @@
     /* 3. 按钮：透明毛玻璃 + 白色文字 */
     section.cover .cover-main p a {
       /* 核心：半透明背景 + 模糊滤镜 */
-      background: rgba(255, 255, 255, 0.15) !important; 
+      background: rgba(255, 255, 255, 0.08) !important; 
       backdrop-filter: blur(10px) !important; 
       -webkit-backdrop-filter: blur(10px) !important; /* 兼容 Safari */
     
-      color: #FFFFFF !important; /* 文字改为白色 */
-      border: 1px solid rgba(255, 255, 255, 0.3) !important; /* 极细的白色边框增加质感 */
+      color: rgba(255, 255, 255, 0.8)!important; /* 文字改为白色 */
+      border: 1px solid rgba(255, 255, 255, 0.15) !important; /* 极细的白色边框增加质感 */
     
       padding: 18px 50px !important;
       border-radius: 50px !important; /* 保持圆润胶囊型 */
@@ -66,16 +66,19 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
     }
 
-    /* 4. 悬停效果：发光 + 提亮 */
+/* --- 4. 按钮悬停：修改此处实现“超亮发光” --- */
     section.cover .cover-main p a:hover {
-      background: rgba(255, 255, 255, 0.3) !important; /* 悬停时稍微加白 */
-      transform: scale(1.05) translateY(-2px) !important;
+      background: rgba(255, 255, 255, 0.25) !important; 
+      color: #FFFFFF !important; /* 文字变全白 */
+      transform: scale(1.08) translateY(-3px) !important;
     
-      /* 核心：外发光效果 */
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 
-                  0 0 10px rgba(255, 255, 255, 0.2) !important;
+      /* 多层白色阴影叠加，制造强发光感 */
+      box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.9),  
+        0 0 30px rgba(255, 255, 255, 0.6),  
+        0 0 60px rgba(255, 255, 255, 0.3) !important; 
     
-      border: 1px solid rgba(255, 255, 255, 0.6) !important; /* 边框也随之变亮 */
+      border: 1px solid rgba(255, 255, 255, 1) !important; /* 边框变亮 */
     }
     /* 移动端优化 */
     @media (max-width: 600px) {
